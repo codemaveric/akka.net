@@ -34,5 +34,16 @@ namespace Akka.Util
 		{
 			get { return Stopwatch.Elapsed; }
 		}
+        
+        private const long NanosPerTick = 100;
+
+        /// <summary>
+        /// Elapsed in nano seconds
+        /// </summary>
+        /// <returns></returns>
+        public static long GetElapsed()
+        {
+            return Elapsed.Ticks * NanosPerTick;
+        }
 	}
 }
